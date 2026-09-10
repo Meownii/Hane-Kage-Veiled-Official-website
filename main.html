@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the story, characters and world of HANE KAGE: VEILED.">
+  <meta name="theme-color" content="#0b0c0d">
+  <title>HANE KAGE: VEILED — Archive</title>
+  <!-- main.html is only for explicit archive hashes. Bare or invalid routes
+       return to the true Home entry before any archive markup is painted. -->
+  <script>
+    (() => {
+      const archiveRoutes = new Set(["story", "characters", "world", "episodes", "gallery", "trailers", "news", "staff"]);
+      const requestedRoute = window.location.hash.slice(1).toLowerCase();
+      const redirectToHome = () => window.location.replace("index.html");
+
+      if (!archiveRoutes.has(requestedRoute)) redirectToHome();
+      window.addEventListener("pageshow", () => {
+        const restoredRoute = window.location.hash.slice(1).toLowerCase();
+        if (!archiveRoutes.has(restoredRoute)) redirectToHome();
+      });
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260910-final">
+  <link rel="stylesheet" href="css/responsive.css?v=20260910-final">
+</head>
+<body class="archive-page">
+  <a class="skip-link" href="#sectionContent">Skip to content</a>
+  <header class="site-header site-header--inner" id="siteHeader">
+    <a class="header-mark" href="index.html?from=archive" aria-label="Hane Kage: Veiled home">
+      <span class="header-mark__crest" aria-hidden="true"><span>HK</span></span>
+      <span class="header-mark__text">HANE KAGE<br><small>VEILED</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
+      <a href="index.html?from=archive">Home</a>
+      <a href="#story" data-section-link="story">Story</a>
+      <a href="#characters" data-section-link="characters">Characters</a>
+      <a href="#world" data-section-link="world">World</a>
+      <a href="#episodes" data-section-link="episodes">Episodes</a>
+      <a href="#gallery" data-section-link="gallery">Gallery</a>
+      <a href="#trailers" data-section-link="trailers">Trailers</a>
+      <a href="#news" data-section-link="news">News</a>
+      <a href="#staff" data-section-link="staff">Staff &amp; Cast</a>
+    </nav>
+  </header>
+
+  <main class="archive" id="sectionContent">
+    <aside class="archive-rail" aria-hidden="true">
+      <span>HANE KAGE: VEILED</span><i></i><span>OFFICIAL ARCHIVE</span>
+    </aside>
+
+    <!-- STORY SECTION -->
+    <section class="content-section" id="story" data-section="story" aria-labelledby="storyTitle" hidden>
+      <div class="section-hero">
+        <p class="eyebrow">01 / The forgotten past</p>
+        <h1 id="storyTitle">Story</h1>
+        <blockquote>Some memories should stay buried.</blockquote>
+      </div>
+      <div class="story-layout">
+        <div class="story-lead">
+          <p>Years after Hane Kage mysteriously disappears, his childhood friend Aishi returns to the old Kage family mansion searching for answers.</p>
+          <p>But the mansion is no longer the place he remembers. Familiar faces return, unfamiliar people appear, and a mysterious Shadow seems to know more about Hane than anyone should.</p>
+        </div>
+        <!-- STORY IMAGE -->
+        <div class="placeholder placeholder--story">INSERT STORY IMAGE HERE</div>
+        <div class="story-intro">
+          <span class="vertical-label">Introduction</span>
+          <div>
+            <p><strong>HANE KAGE: VEILED</strong> is an independent animated series combining psychological mystery, dark fantasy, supernatural elements, and drama.</p>
+            <p>The story follows Aishi, who returns years after the mysterious disappearance of his childhood friend, Hane Kage.</p>
+            <p>As Aishi searches for answers, strange phenomena begin to emerge, revealing forgotten memories and secrets connected to Hane's past. Somewhere within the mystery, a strange Shadow watches from the darkness.</p>
+          </div>
+        </div>
+      </div>
+      <div class="story-meta">
+        <div><h2>Genre</h2><p>Psychological Mystery · Dark Fantasy · Supernatural · Drama · Horror</p></div>
+        <div><h2>Themes</h2><p>Friendship · Identity · Memory · Imagination · Obsession · Hidden Emotions</p></div>
+      </div>
+    </section>
+
+    <!-- CHARACTERS SECTION: content is generated by characters.js -->
+    <section class="content-section" id="characters" data-section="characters" aria-labelledby="charactersTitle" hidden>
+      <div class="section-hero"><p class="eyebrow">02 / Faces behind the veil</p><h1 id="charactersTitle">Characters</h1><blockquote>Everyone remembers a different truth.</blockquote></div>
+      <div class="character-stage">
+        <div class="character-stage__image" id="characterImage" role="img" aria-label="Character image placeholder">INSERT LARGE CHARACTER IMAGE HERE</div>
+        <div class="character-stage__info" aria-live="polite">
+          <span class="character-index" id="characterIndex">01 / 04</span>
+          <p class="eyebrow" id="characterSubtitle">The absent heart</p>
+          <h2 id="characterName">Hane Kage</h2>
+          <p id="characterDescription"></p>
+          <dl class="character-facts" id="characterFacts"></dl>
+          <div class="character-controls">
+            <button id="previousCharacter" type="button" aria-label="Previous character">← Previous</button>
+            <button id="nextCharacter" type="button" aria-label="Next character">Next →</button>
+          </div>
+        </div>
+      </div>
+      <div class="character-selectors" id="characterSelectors" aria-label="Choose a character"></div>
+      <!-- DETAILED CHARACTER PROFILE: content is generated by characters.js -->
+      <div class="character-record" id="characterRecord" aria-live="polite"></div>
+    </section>
+
+    <!-- WORLD SECTION -->
+    <section class="content-section" id="world" data-section="world" aria-labelledby="worldTitle" hidden>
+      <div class="section-hero"><p class="eyebrow">03 / Places and relics</p><h1 id="worldTitle">World</h1><blockquote>Every corner holds a secret.</blockquote></div>
+      <div class="world-introduction">
+        <h2>The World</h2>
+        <p>“The world of <strong>HANE KAGE: VEILED</strong> explores the boundaries between memory, imagination, identity, and reality.”</p>
+      </div>
+      <div class="world-grid">
+        <article class="world-entry"><span>01</span><div class="placeholder placeholder--world">INSERT WORLD IMAGE HERE</div><h2>Kage Mansion</h2><p>The old Kage family mansion is one of the most important locations in the story. Its halls contain forgotten memories, strange occurrences, and secrets connected to Hane's disappearance.</p></article>
+        <article class="world-entry"><span>02</span><div class="placeholder placeholder--world">INSERT WORLD IMAGE HERE</div><h2>The Shadow</h2><p>A mysterious supernatural presence whose connection to Hane remains unknown.</p></article>
+        <article class="world-entry"><span>03</span><div class="placeholder placeholder--world">INSERT WORLD IMAGE HERE</div><h2>The Drawings</h2><p>Childhood creations that begin appearing in ways that should not be possible.</p></article>
+        <article class="world-entry"><span>04</span><div class="placeholder placeholder--world">INSERT WORLD IMAGE HERE</div><h2>The Diary</h2><p>An old personal record containing memories and emotions that may hold the key to the past.</p></article>
+        <article class="world-entry"><span>05</span><div class="placeholder placeholder--world">INSERT WORLD IMAGE HERE</div><h2>Memories</h2><p>Fragments of the past begin appearing throughout the story.</p></article>
+      </div>
+    </section>
+
+    <!-- EPISODES SECTION: list is generated by news.js -->
+    <section class="content-section" id="episodes" data-section="episodes" aria-labelledby="episodesTitle" hidden>
+      <div class="section-hero"><p class="eyebrow">04 / Chapter records</p><h1 id="episodesTitle">Episodes</h1><blockquote>The story has just begun.</blockquote></div>
+      <div class="episode-list" id="episodeList"></div>
+    </section>
+
+    <!-- GALLERY SECTION: items are generated by gallery.js -->
+    <section class="content-section" id="gallery" data-section="gallery" aria-labelledby="galleryTitle" hidden>
+      <div class="section-hero"><p class="eyebrow">05 / Production archive</p><h1 id="galleryTitle">Gallery</h1><blockquote>Fragments from beyond the curtain.</blockquote></div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- TRAILERS SECTION -->
+    <section class="content-section" id="trailers" data-section="trailers" aria-labelledby="trailersTitle" hidden>
+      <div class="section-hero"><p class="eyebrow">06 / Moving pictures</p><h1 id="trailersTitle">Trailers</h1><blockquote>Something has been waiting in the darkness.</blockquote></div>
+      <div class="trailer-feature">
+        <div class="placeholder placeholder--video">INSERT YOUTUBE VIDEO / TRAILER HERE</div>
+        <div><span class="eyebrow">Main Film</span><h2>Official Trailer</h2><p>Coming Soon</p><button class="ornament-button" type="button" disabled>Watch the trailer</button></div>
+      </div>
+      <div class="teaser-list">
+        <div><span>01</span><strong>Official Trailer</strong><em>Coming Soon</em></div>
+        <div><span>02</span><strong>Teaser 01</strong><em>Coming Soon</em></div>
+        <div><span>03</span><strong>Teaser 02</strong><em>Coming Soon</em></div>
+      </div>
+    </section>
+
+    <!-- NEWS SECTION: cards are generated by news.js -->
+    <section class="content-section" id="news" data-section="news" aria-labelledby="newsTitle" hidden>
+      <div class="section-hero"><p class="eyebrow">07 / Latest transmissions</p><h1 id="newsTitle">News</h1><blockquote>Messages from behind the veil.</blockquote></div>
+      <div class="news-list" id="newsList"></div>
+    </section>
+
+    <!-- STAFF & CAST SECTION -->
+    <section class="content-section" id="staff" data-section="staff" aria-labelledby="staffTitle" hidden>
+      <div class="section-hero"><p class="eyebrow">08 / Production record</p><h1 id="staffTitle">Staff &amp; Cast</h1><blockquote>The voices and hands behind the story.</blockquote></div>
+      <div class="credits-layout">
+        <div class="credits-column">
+          <h2>Staff</h2>
+          <dl class="credit-list">
+            <div><dt>Creator / Director</dt><dd>Sato / Sakurane Satto / SatoChan</dd></div>
+            <div><dt>Original Story &amp; Writing</dt><dd>Sato / Sakurane Satto / SatoChan</dd></div>
+            <div><dt>Character Design</dt><dd>Sato / Sakurane Satto / SatoChan</dd></div>
+            <div><dt>Art &amp; Illustration</dt><dd>Sato / Sakurane Satto / SatoChan</dd></div>
+            <div><dt>Animation</dt><dd>Sato / Sakurane Satto / SatoChan</dd></div>
+            <div><dt>Storyboard &amp; Animatic</dt><dd>Sato / Sakurane Satto / SatoChan</dd></div>
+            <div><dt>Background Art</dt><dd>KojikaArt</dd></div>
+            <div><dt>Editing &amp; Compositing</dt><dd>Editor: Hao<br>Art Compositor: Sato / Sakurane Satto / SatoChan</dd></div>
+            <div><dt>Music</dt><dd>HAIVIMOX<br>Xen Naomi</dd></div>
+            <div><dt>Sound Design</dt><dd>TBA</dd></div>
+            <div><dt>Production</dt><dd>Sato / Sakurane Satto / SatoChan</dd></div>
+          </dl>
+        </div>
+        <div class="credits-column">
+          <h2>Cast</h2>
+          <h3>Portuguese</h3>
+          <dl class="credit-list credit-list--cast">
+            <div><dt>Hane</dt><dd>KookyeChan</dd></div><div><dt>Aishi</dt><dd>Nando Rocha</dd></div><div><dt>Aishi — Kid</dt><dd>Ovelha de algodão</dd></div><div><dt>Shadow Hane</dt><dd>Washerdubs</dd></div><div><dt>Seal</dt><dd>Nyvisk_</dd></div>
+          </dl>
+          <h3>English</h3>
+          <dl class="credit-list credit-list--cast">
+            <div><dt>Hane</dt><dd>KookyeChan</dd></div><div><dt>Aishi</dt><dd>TBA</dd></div><div><dt>Aishi — Kid</dt><dd>TBA</dd></div><div><dt>Hane Shadow</dt><dd>TBA</dd></div><div><dt>Seal</dt><dd>TBA</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="staff-photos" aria-label="Staff image placeholders">
+        <div class="placeholder">INSERT STAFF IMAGE HERE</div><div class="placeholder">INSERT STAFF IMAGE HERE</div><div class="placeholder">INSERT STAFF IMAGE HERE</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ROSE SECTION DIVIDER: decorative boundary between the archive and footer -->
+  <div class="rose-divider rose-divider--archive" aria-hidden="true">
+    <img src="images/decorations/rose-divider.png" alt="">
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><img src="images/logo.png" alt="HANE KAGE: VEILED"><p>Official website for the independent animated series.</p></div>
+    <div class="footer-socials" aria-label="Social links">
+      <a href="https://www.instagram.com/hanekage_veiled_oficial" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://youtube.com/@hanekageanimation" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <span aria-disabled="true">X / Twitter — Coming Soon</span><span aria-disabled="true">ArtStation — Coming Soon</span>
+    </div>
+    <div class="footer-legal"><span>© HANE KAGE: VEILED. All rights reserved.</span><span>Website created by <a href="https://meownii0.neocities.org/" target="_blank" rel="noopener noreferrer">Meownii</a></span></div>
+  </footer>
+
+  <!-- GALLERY LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" hidden>
+    <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close image viewer">×</button>
+    <button class="lightbox__previous" id="lightboxPrevious" type="button" aria-label="Previous image">←</button>
+    <div class="lightbox__image" id="lightboxImage" role="img">INSERT GALLERY IMAGE HERE</div>
+    <p id="lightboxCaption"></p>
+    <button class="lightbox__next" id="lightboxNext" type="button" aria-label="Next image">→</button>
+  </div>
+
+  <script src="js/characters.js?v=20260910-final"></script>
+  <script src="js/news.js?v=20260910-final"></script>
+  <script src="js/gallery.js?v=20260910-final"></script>
+  <script src="js/main.js?v=20260910-final"></script>
+</body>
+</html>
