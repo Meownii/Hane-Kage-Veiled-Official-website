@@ -166,6 +166,7 @@ img { display: block; max-width: 100%; }
 .world-entry h2 { margin: 1.3rem 0 .6rem; color: var(--paper); font: 500 clamp(1.4rem, 2vw, 2.1rem)/1.1 var(--display); text-transform: uppercase; }
 .world-entry p { color: var(--silver); }
 .placeholder--world { min-height: 190px; margin-top: 1rem; color: #6f7776; background: #111719; }
+.world-image { width: 100%; aspect-ratio: 16 / 9; margin-top: 1rem; border: 1px solid var(--line); background: #111719; object-fit: contain; object-position: center; }
 
 /* EPISODES */
 .episode-list { border-top: 1px solid var(--line); }
