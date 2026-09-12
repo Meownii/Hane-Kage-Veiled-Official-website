@@ -10,6 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const returningFromArchive = intro && new URLSearchParams(window.location.search).get("from") === "archive";
 
+  /* ==================================================
+     FUTURE IMAGE LOADER
+     Elements with data-image-path automatically use that exact filename
+     when the owner adds it to the project. Until then, the placeholder stays.
+     ================================================== */
+  document.querySelectorAll("[data-image-path]").forEach(element => {
+    const path = element.dataset.imagePath;
+    if (!path) return;
+    const probe = new Image();
+    probe.onload = () => {
+      element.style.backgroundImage = `url("${path}")`;
+      element.style.backgroundSize = element.dataset.imageFit || "cover";
+      element.style.backgroundPosition = element.dataset.imagePosition || "center";
+      element.style.backgroundRepeat = "no-repeat";
+      element.textContent = "";
+      element.classList.add("has-image");
+    };
+    probe.src = path;
+  });
+
   // A fresh entry always shows the same cinematic intro on desktop and mobile.
   // Returning through the archive's HOME link deliberately skips the replay,
   // avoiding a partial second intro without relying on persistent storage.

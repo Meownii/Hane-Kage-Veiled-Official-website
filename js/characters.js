@@ -123,8 +123,9 @@ const characters = [
     name: "The Shadow",
     subtitle: "Major Character / Mysterious Entity • HANE KAGE: VEILED",
     summary: "Something is always watching.",
-    image: "",
-    thumbnail: "",
+    /* These exact filenames can be added later without changing this file. */
+    image: "images/characters/character-shadow.png",
+    thumbnail: "images/characters/character-shadow-thumb.png",
     imagePlaceholder: "INSERT SHADOW FULL-BODY ARTWORK HERE",
     thumbnailPlaceholder: "INSERT SHADOW ICON HERE",
     facts: [
@@ -180,6 +181,12 @@ document.addEventListener("DOMContentLoaded", () => {
         : `<span class="character-selector__portrait character-selector__portrait--placeholder">${character.thumbnailPlaceholder}</span>`;
 
       button.innerHTML = `${portrait}<span class="character-selector__copy"><strong>${character.name}</strong><small>${character.summary}</small></span>`;
+      const portraitImage = button.querySelector(".character-selector__portrait img");
+      portraitImage?.addEventListener("error", () => {
+        const portraitArea = portraitImage.closest(".character-selector__portrait");
+        portraitArea.classList.add("character-selector__portrait--placeholder");
+        portraitArea.textContent = character.thumbnailPlaceholder;
+      });
       button.addEventListener("click", () => selectCharacter(index));
       selectorContainer.appendChild(button);
     });
@@ -190,6 +197,12 @@ document.addEventListener("DOMContentLoaded", () => {
     imageArea.innerHTML = character.image
       ? `<img class="character-full-art" src="${character.image}" alt="Full-body artwork of ${character.name}">`
       : `<span class="character-art-placeholder">${character.imagePlaceholder}</span>`;
+    const artworkImage = imageArea.querySelector(".character-full-art");
+    artworkImage?.addEventListener("error", () => {
+      imageArea.classList.add("character-stage__image--placeholder");
+      imageArea.innerHTML = `<span class="character-art-placeholder">${character.imagePlaceholder}</span>`;
+      imageArea.setAttribute("aria-label", character.imagePlaceholder);
+    });
     imageArea.setAttribute("aria-label", character.image ? `${character.name} full-body artwork` : character.imagePlaceholder);
   }
 

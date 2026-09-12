@@ -9,7 +9,8 @@ const newsItems = [
     date: "2026.09.08",
     title: "Official Website Open",
     text: "The official HANE KAGE: VEILED website is now online.",
-    image: ""
+    image: "images/news/news-website-open.png",
+    imageFit: "contain"
   }
 
   /* EXAMPLE — remove these comment marks to use it:
@@ -24,29 +25,30 @@ const newsItems = [
 
 /* ==================================================
    ADD NEW EPISODES HERE
-   Keep image as "" until a thumbnail is available.
+   The filenames are already defined. Add each future thumbnail to the
+   images folder using the exact name shown below.
    ================================================== */
 const episodeItems = [
   {
     number: "01",
     status: "Coming Soon",
     title: "The Beginning",
-    description: "Aishi returns to the Kage mansion, searching for answers about the disappearance of his childhood friend.",
-    image: ""
+    description: "Young Hane starts at a new school, where he meets Aishi, an unusual boy who soon becomes his first true friend. As the two grow closer, they escape into worlds of their own creation through drawings and imagination. Their innocent friendship marks the beginning of a bond that will shape both of their lives.",
+    image: "images/episode-01.jpg"
   },
   {
     number: "02",
     status: "Coming Soon",
     title: "—",
     description: "Future episode details will be revealed.",
-    image: ""
+    image: "images/episode-02.jpg"
   },
   {
     number: "03",
     status: "Coming Soon",
     title: "—",
     description: "Future episode details will be revealed.",
-    image: ""
+    image: "images/episode-03.jpg"
   }
 ];
 
@@ -71,6 +73,9 @@ function createNewsCard(item) {
   if (item.image) {
     image.classList.add("has-image");
     image.style.backgroundImage = `url("${item.image}")`;
+    image.style.backgroundSize = item.imageFit || "cover";
+    image.style.backgroundRepeat = "no-repeat";
+    image.style.backgroundPosition = "center";
     image.setAttribute("aria-label", `${item.title} news image`);
   } else {
     image.textContent = "INSERT NEWS IMAGE HERE";
@@ -92,15 +97,18 @@ function createEpisodeCard(item) {
   const image = document.createElement("div");
   image.className = "episode-thumb placeholder";
   image.setAttribute("role", "img");
+  image.textContent = "INSERT EPISODE IMAGE HERE";
+  image.setAttribute("aria-label", "Episode image placeholder");
   if (item.image) {
-    image.textContent = "";
-    image.style.backgroundImage = `url("${item.image}")`;
-    image.style.backgroundSize = "cover";
-    image.style.backgroundPosition = "center";
-    image.setAttribute("aria-label", `Episode ${item.number} image`);
-  } else {
-    image.textContent = "INSERT EPISODE IMAGE HERE";
-    image.setAttribute("aria-label", "Episode image placeholder");
+    const probe = new Image();
+    probe.onload = () => {
+      image.textContent = "";
+      image.style.backgroundImage = `url("${item.image}")`;
+      image.style.backgroundSize = "cover";
+      image.style.backgroundPosition = "center";
+      image.setAttribute("aria-label", `Episode ${item.number} image`);
+    };
+    probe.src = item.image;
   }
 
   const info = document.createElement("div");

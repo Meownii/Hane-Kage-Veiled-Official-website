@@ -1,17 +1,11 @@
 /* ==================================================
    EDIT GALLERY ITEMS HERE
 
-   Replace an empty image value with a relative path, for example:
-   image: "images/gallery/gallery-01.jpg"
-   Keep image as "" to display a placeholder.
+   Add future approved artwork by copying the object below and changing
+   its title and numbered filename. Keep only finished/current artwork here.
    ================================================== */
 const galleryItems = [
-  { title: "Concept Art 01", image: "" },
-  { title: "Character Drawing 01", image: "" },
-  { title: "Production Artwork 01", image: "" },
-  { title: "Screenshot 01", image: "" },
-  { title: "Official Poster 01", image: "" },
-  { title: "Concept Art 02", image: "" }
+  { title: "The Shadow", image: "images/gallery/gallery-01.png" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
