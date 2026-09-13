@@ -73,12 +73,20 @@
         <h2 id="homeTrailerTitle">Official Trailer</h2>
         <p>Something has been waiting in the darkness.</p>
       </div>
-      <a class="trailer-poster" href="main.html#trailers" aria-label="Open the trailers section">
-        <!-- FUTURE IMAGE FILE: images/home/trailer-thumbnail.jpg -->
-        <span class="placeholder placeholder--media" data-image-path="images/home/trailer-thumbnail.jpg">INSERT TRAILER THUMBNAIL / VIDEO HERE</span>
-        <span class="play-button" aria-hidden="true">▶</span>
-        <span class="trailer-poster__label">Watch trailer</span>
-      </a>
+      <div class="trailer-poster">
+        <!-- OFFICIAL TRAILER: replace only the video ID in the URL to update it later. -->
+        <div class="placeholder placeholder--media" style="min-height:0; padding:0; aspect-ratio:16 / 9; overflow:hidden;">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/P8-jnPetMYs"
+            title="HANE KAGE: VEILED — Official Trailer"
+            style="display:block; width:100%; height:100%; border:0;"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
     </section>
 
     <section class="home-news-strip" aria-label="Latest news">
