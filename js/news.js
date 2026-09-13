@@ -9,8 +9,8 @@ const newsItems = [
     date: "2026.09.08",
     title: "Official Website Open",
     text: "The official HANE KAGE: VEILED website is now online.",
-    image: "images/news/news-website-open.png",
-    imageFit: "contain"
+    image: "images/logo.png",
+    imageFit: "auto 88%"
   }
 
   /* EXAMPLE — remove these comment marks to use it:
