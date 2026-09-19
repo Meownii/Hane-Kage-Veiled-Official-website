@@ -1568,21 +1568,8 @@ body {
   }
 
   .home-page .hero__visual::after {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 2;
-    inset: -36px -30px -36px auto;
-    width: 42%;
-    background:
-      linear-gradient(90deg, rgba(7,20,29,0), rgba(7,20,29,.08) 34%, rgba(7,20,29,.5) 100%),
-      url("../images/home/home-cover.png") 42% center / auto 108% no-repeat;
-    filter: blur(24px) saturate(.82) brightness(.76);
-    opacity: .94;
-    transform: scale(1.08);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.42) 20%, #000 48%);
-    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.42) 20%, #000 48%);
-    pointer-events: none;
+    content: none;
+    display: none;
   }
 
   .home-page .hero__visual::before {
