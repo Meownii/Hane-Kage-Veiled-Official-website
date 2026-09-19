@@ -1285,13 +1285,15 @@ body {
 
 .hero__visual {
   position: absolute;
-  inset: var(--header-height) 0 0;
+  inset: var(--header-height) auto 0 0;
   z-index: 1;
   display: block;
+  width: min(60vw, 1080px);
   min-height: 0;
   padding: 0;
   border: 0;
   background: transparent;
+  overflow: hidden;
   pointer-events: none;
 }
 
@@ -1301,28 +1303,26 @@ body {
   z-index: 2;
   inset: 0;
   border: 0;
-  background:
-    linear-gradient(90deg, #f4f0e7 0%, rgba(244,240,231,.96) 20%, rgba(244,240,231,.38) 42%, transparent 62%),
-    linear-gradient(0deg, rgba(244,240,231,.52), transparent 22%);
+  background: linear-gradient(90deg, transparent 72%, rgba(244,240,231,.22) 84%, #f4f0e7 100%);
 }
 
 .hero__visual::after { content: none; }
 
 .hero__keyvisual {
   position: absolute;
-  right: clamp(1rem, 5vw, 6rem);
-  bottom: 0;
+  inset: 0;
   display: block;
-  width: min(64vw, 980px);
+  width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: right bottom;
+  object-fit: cover;
+  object-position: center 42%;
 }
 
 .hero__copy {
-  left: clamp(2rem, 8vw, 9rem);
+  left: auto;
+  right: clamp(2rem, 8vw, 9rem);
   top: 54%;
-  width: min(30vw, 360px);
+  width: min(31vw, 380px);
   transform: translateY(-50%);
   text-align: center;
 }
