@@ -1342,7 +1342,7 @@ body {
     min-height: 100vh;
     min-height: 100svh;
     padding: 0;
-    background: #07141d;
+    background: #f4f0e7;
   }
 
   .home-page .hero__visual {
@@ -1357,8 +1357,8 @@ body {
   .home-page .hero__visual::before {
     z-index: 2;
     background:
-      linear-gradient(90deg, #07141d 0%, rgba(7,20,29,.48) 5%, transparent 13%, transparent 82%, rgba(7,20,29,.6) 93%, #07141d 100%),
-      linear-gradient(0deg, #07141d 0%, rgba(7,20,29,.62) 9%, transparent 25%);
+      linear-gradient(90deg, transparent 88%, rgba(244,240,231,.14) 95%, #f4f0e7 100%),
+      linear-gradient(0deg, rgba(8,18,24,.22), transparent 18%);
   }
 
   .home-page .hero__keyvisual {
@@ -1366,7 +1366,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center 18%;
   }
 
   .home-page .hero__copy {
@@ -1396,7 +1396,6 @@ body {
 
   .home-page .hero__copy .eyebrow {
     margin: .8rem 0 .25rem;
-    color: #b74b55;
     font-size: .58rem;
   }
 
@@ -1412,14 +1411,12 @@ body {
   .home-page .hero blockquote {
     max-width: 280px;
     margin: .15rem auto .55rem;
-    color: #e8e0d0;
     font-size: clamp(1rem, 1.25vw, 1.22rem);
     line-height: 1.14;
   }
 
   .home-page .hero .ornament-link {
     padding: .55rem .8rem;
-    color: #e8e0d0;
     font-size: .59rem;
   }
 
@@ -1434,11 +1431,9 @@ body {
     min-height: 620px;
     padding: clamp(17rem, 40vh, 19rem) clamp(1.8rem, 3vw, 3.2rem) 1.25rem;
     overflow-y: auto;
-    color: #d5c9b4;
-    border-left: 1px solid rgba(130,31,41,.4);
-    background:
-      radial-gradient(circle at 100% 12%, rgba(21,56,62,.3), transparent 42%),
-      linear-gradient(135deg, rgba(9,25,34,.96), #050a0e 72%);
+    color: #20191a;
+    border-left: 1px solid rgba(119,25,35,.22);
+    background: transparent;
   }
 
   .home-page .site-header--home .header-mark,
@@ -1467,8 +1462,8 @@ body {
   .home-page .site-header--home .primary-nav a {
     width: 100%;
     padding: .48rem .7rem;
-    color: #d5c9b4;
-    border-bottom: 1px solid rgba(213,201,180,.12);
+    color: #20191a;
+    border-bottom: 1px solid rgba(81,68,70,.11);
     font-size: .64rem;
     letter-spacing: .17em;
     text-align: left;
@@ -1483,7 +1478,7 @@ body {
   .home-page .site-header--home .primary-nav a:hover,
   .home-page .site-header--home .primary-nav a.active {
     padding-left: 1.15rem;
-    color: #d36a73;
+    color: #7a1722;
   }
 
   .home-page .hero__lines { display: none; }
