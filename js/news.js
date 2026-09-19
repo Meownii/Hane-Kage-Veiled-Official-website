@@ -32,7 +32,7 @@ const episodeItems = [
   {
     number: "01",
     status: "Coming Soon",
-    title: "The Beginning",
+    title: "A World We Drew",
     description: "Young Hane starts at a new school, where he meets Aishi, an unusual boy who soon becomes his first true friend. As the two grow closer, they escape into worlds of their own creation through drawings and imagination. Their innocent friendship marks the beginning of a bond that will shape both of their lives.",
     image: "images/episode-01.jpg"
   },
