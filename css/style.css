@@ -1546,7 +1546,7 @@ body {
 /* HOME ART — large desktop presentation with a soft dark lower fade. */
 @media (min-width: 981px) {
   .home-page {
-    --home-hero-height: max(105svh, clamp(1080px, 88vw, 1600px));
+    --home-hero-height: max(100svh, clamp(820px, 65vw, 1150px));
     --home-side-panel: clamp(400px, 27vw, 470px);
   }
 
@@ -1561,10 +1561,9 @@ body {
 
   .home-page .hero__keyvisual {
     z-index: 1;
-    object-fit: contain;
-    object-position: left center;
-    transform: scale(1.065);
-    transform-origin: left center;
+    object-fit: cover;
+    object-position: center;
+    transform: none;
   }
 
   .home-page .hero__visual::after {
