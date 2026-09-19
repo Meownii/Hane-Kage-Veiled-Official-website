@@ -1547,7 +1547,7 @@ body {
 @media (min-width: 981px) {
   .home-page {
     --home-hero-height: max(105svh, clamp(1080px, 88vw, 1600px));
-    --home-side-panel: clamp(380px, 26vw, 450px);
+    --home-side-panel: clamp(400px, 27vw, 470px);
   }
 
   .home-page .hero {
@@ -1563,19 +1563,25 @@ body {
     z-index: 1;
     object-fit: contain;
     object-position: left center;
+    transform: scale(1.065);
+    transform-origin: left center;
   }
 
   .home-page .hero__visual::after {
     content: "";
     display: block;
     position: absolute;
-    z-index: 0;
-    inset: -34px;
+    z-index: 2;
+    inset: -36px -30px -36px auto;
+    width: 42%;
     background:
-      linear-gradient(90deg, rgba(7,20,29,.08), rgba(7,20,29,.02) 58%, rgba(7,20,29,.58)),
-      url("../images/home/home-cover.png") center / 100% 100% no-repeat;
-    filter: blur(20px) saturate(.78) brightness(.7);
-    transform: scale(1.065);
+      linear-gradient(90deg, rgba(7,20,29,0), rgba(7,20,29,.08) 34%, rgba(7,20,29,.5) 100%),
+      url("../images/home/home-cover.png") 42% center / auto 108% no-repeat;
+    filter: blur(24px) saturate(.82) brightness(.76);
+    opacity: .94;
+    transform: scale(1.08);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.42) 20%, #000 48%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.42) 20%, #000 48%);
     pointer-events: none;
   }
 
@@ -1583,7 +1589,7 @@ body {
     content: "";
     display: block;
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     inset: auto 0 0;
     width: 100%;
     height: clamp(75px, 12vh, 130px);
@@ -1597,39 +1603,40 @@ body {
   .home-page .site-header--home {
     height: var(--home-hero-height);
     min-height: var(--home-hero-height);
-    padding: clamp(27rem, 52vh, 31rem) clamp(2.25rem, 3.2vw, 3.9rem) 1.5rem;
+    padding: clamp(28rem, 53vh, 32rem) clamp(2.25rem, 3.2vw, 3.9rem) 1.5rem;
     overflow-y: visible;
   }
 
   .home-page .hero__copy {
     top: clamp(1.8rem, 4vh, 3.3rem);
-    padding-inline: clamp(2.1rem, 3.2vw, 3.8rem);
+    padding-inline: clamp(1.35rem, 2vw, 2.2rem);
   }
 
   .home-page .hero__copy .eyebrow {
     margin-bottom: .45rem;
-    font-size: clamp(.67rem, .68vw, .78rem);
+    font-size: clamp(.73rem, .72vw, .84rem);
   }
 
   .home-page .hero__logo {
-    width: min(305px, 88%);
-    max-height: 285px;
+    width: min(390px, 98%);
+    max-height: 345px;
     margin: -.15rem auto .15rem;
   }
 
   .home-page .hero blockquote {
-    max-width: 360px;
+    max-width: 390px;
     margin-bottom: .9rem;
-    font-size: clamp(1.25rem, 1.42vw, 1.55rem);
+    font-size: clamp(1.38rem, 1.5vw, 1.68rem);
   }
 
   .home-page .hero .ornament-link {
-    padding: .78rem 1.1rem;
-    font-size: clamp(.68rem, .67vw, .78rem);
+    padding: .88rem 1.2rem;
+    font-size: clamp(.74rem, .72vw, .84rem);
   }
 
   .home-page .site-header--home .primary-nav a {
-    padding: clamp(.7rem, .85vh, .92rem) .95rem;
-    font-size: clamp(.77rem, .74vw, .88rem);
+    padding: clamp(.82rem, 1vh, 1.02rem) 1rem;
+    font-size: clamp(.86rem, .82vw, .98rem);
+    letter-spacing: .18em;
   }
 }
