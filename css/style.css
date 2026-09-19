@@ -1561,11 +1561,11 @@ body {
     z-index: 2;
     inset: auto 0 0;
     width: 100%;
-    height: clamp(110px, 20vh, 220px);
+    height: clamp(55px, 8vh, 90px);
     border: 0;
     opacity: 1;
     transform: none;
-    background: linear-gradient(to bottom, transparent 0%, rgba(7,20,29,.34) 42%, #07141d 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(7,20,29,.12) 45%, rgba(7,20,29,.58) 100%);
     pointer-events: none;
   }
 }
