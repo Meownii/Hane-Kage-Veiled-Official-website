@@ -1272,3 +1272,60 @@ body {
     visibility: hidden !important;
   }
 }
+
+/* ==================================================
+   HOME KEY VISUAL — supplied official cover
+   The portrait artwork is integrated into the light hero without a card,
+   border or forced crop. Mobile placement is completed in responsive.css.
+   ================================================== */
+.hero {
+  min-height: 100svh;
+  overflow: hidden;
+}
+
+.hero__visual {
+  position: absolute;
+  inset: var(--header-height) 0 0;
+  z-index: 1;
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.hero__visual::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border: 0;
+  background:
+    linear-gradient(90deg, #f4f0e7 0%, rgba(244,240,231,.96) 20%, rgba(244,240,231,.38) 42%, transparent 62%),
+    linear-gradient(0deg, rgba(244,240,231,.52), transparent 22%);
+}
+
+.hero__visual::after { content: none; }
+
+.hero__keyvisual {
+  position: absolute;
+  right: clamp(1rem, 5vw, 6rem);
+  bottom: 0;
+  display: block;
+  width: min(64vw, 980px);
+  height: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+.hero__copy {
+  left: clamp(2rem, 8vw, 9rem);
+  top: 54%;
+  width: min(30vw, 360px);
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.hero__logo { margin-inline: auto; }
+.hero .ornament-link { margin-inline: auto; }
