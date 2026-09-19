@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const returningFromArchive = intro && new URLSearchParams(window.location.search).get("from") === "archive";
 
+  // Keep the Home call-to-action reliable even when the desktop navigation
+  // occupies the same visual rail above it.
+  document.querySelector("[data-enter-veil]")?.addEventListener("click", event => {
+    event.preventDefault();
+    window.location.assign("./main.html#story");
+  });
+
   /* ==================================================
      FUTURE IMAGE LOADER
      Elements with data-image-path automatically use that exact filename

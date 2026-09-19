@@ -62,7 +62,8 @@
   .episode-card { grid-template-columns: 55px 1fr; }
   .episode-thumb { grid-column: 2; }
   .episode-info { grid-column: 2; }
-  .gallery-item, .gallery-item:nth-child(1), .gallery-item:nth-child(5) { grid-column: span 6; min-height: 260px; }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gallery-item, .gallery-item:nth-child(1), .gallery-item:nth-child(5) { grid-column: auto; min-height: 0; aspect-ratio: 1 / 1; }
   .credits-layout { gap: 5rem; }
   .staff-photos { justify-content: center; min-height: 280px; padding-inline: 0; }
   .site-footer { grid-template-columns: 1fr; }
@@ -92,7 +93,8 @@
   .character-selector { min-height: 150px; }
   .episode-card { grid-template-columns: 1fr; }
   .episode-number, .episode-thumb, .episode-info { grid-column: 1; }
-  .gallery-item, .gallery-item:nth-child(1), .gallery-item:nth-child(5) { grid-column: span 12; min-height: 300px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item, .gallery-item:nth-child(1), .gallery-item:nth-child(5) { grid-column: auto; min-height: 0; aspect-ratio: 1 / 1; }
   .lightbox { grid-template-columns: 44px minmax(0,1fr) 44px; gap: .35rem; padding: .7rem; }
   .lightbox__image { min-height: 60vh; }
   .lightbox__previous, .lightbox__next { width: 42px; height: 48px; }
@@ -528,6 +530,7 @@
    remains the dominant visual while the logo, quote and link stay readable.
    ================================================== */
 @media (min-width: 769px) and (max-width: 980px) {
+  .hero { background: #07141d; }
   .hero__visual {
     inset: var(--header-height) 0 14.5rem;
     width: 100%;
@@ -535,14 +538,15 @@
     min-height: 0;
   }
   .hero__visual::before {
-    background: linear-gradient(0deg, #f4f0e7 0%, rgba(244,240,231,.84) 9%, transparent 28%);
+    content: none;
+    display: none;
   }
   .hero__keyvisual {
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 24%;
+    object-fit: contain;
+    object-position: center;
   }
   .hero__copy {
     left: 50%;
@@ -553,11 +557,15 @@
     transform: translateX(-50%);
     text-align: center;
   }
+  .hero__copy .eyebrow { color: #b74b55; }
+  .hero blockquote,
+  .hero .ornament-link { color: #e8e0d0; }
 }
 
 @media (max-width: 768px) {
   .hero {
     min-height: max(100svh, 700px);
+    background: #07141d;
   }
   .hero__visual {
     position: absolute;
@@ -566,20 +574,19 @@
     width: 100%;
     min-height: 0;
     padding: 0;
-    background: transparent;
+    background: #101d25;
   }
   .hero__visual::before {
-    inset: 0;
-    border: 0;
-    background: linear-gradient(0deg, #f4f0e7 0%, rgba(244,240,231,.86) 9%, transparent 28%);
+    content: none;
+    display: none;
   }
   .hero__keyvisual {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center 38%;
+    object-fit: contain;
+    object-position: center;
   }
   .hero__copy {
     left: 50%;
@@ -590,6 +597,9 @@
     transform: translateX(-50%);
     text-align: center;
   }
+  .hero__copy .eyebrow { color: #b74b55; }
+  .hero blockquote,
+  .hero .ornament-link { color: #e8e0d0; }
   .hero__logo {
     width: min(50vw, 205px);
     max-width: 205px;
@@ -600,6 +610,16 @@
     max-width: 310px;
     margin: .3rem auto .65rem;
   }
+}
+
+@media (max-width: 980px) {
+  .site-header--home {
+    color: #d5c9b4;
+    background: linear-gradient(180deg, rgba(5,10,14,.96), rgba(7,20,29,.72) 70%, transparent);
+  }
+  .site-header--home .header-mark__crest::after,
+  .site-header--home .menu-toggle::after { background: #07141d; }
+  .site-header--home .header-mark__text small { color: #d36a73; }
 }
 
 @media (max-width: 430px) {

@@ -178,14 +178,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const portrait = character.thumbnail
         ? `<span class="character-selector__portrait"><img src="${character.thumbnail}" alt="" loading="lazy"></span>`
-        : `<span class="character-selector__portrait character-selector__portrait--placeholder">${character.thumbnailPlaceholder}</span>`;
+        : `<span class="character-selector__portrait character-selector__portrait--placeholder" aria-hidden="true"></span>`;
 
       button.innerHTML = `${portrait}<span class="character-selector__copy"><strong>${character.name}</strong><small>${character.summary}</small></span>`;
       const portraitImage = button.querySelector(".character-selector__portrait img");
       portraitImage?.addEventListener("error", () => {
         const portraitArea = portraitImage.closest(".character-selector__portrait");
         portraitArea.classList.add("character-selector__portrait--placeholder");
-        portraitArea.textContent = character.thumbnailPlaceholder;
+        portraitArea.textContent = "";
       });
       button.addEventListener("click", () => selectCharacter(index));
       selectorContainer.appendChild(button);
@@ -196,14 +196,14 @@ document.addEventListener("DOMContentLoaded", () => {
     imageArea.classList.toggle("character-stage__image--placeholder", !character.image);
     imageArea.innerHTML = character.image
       ? `<img class="character-full-art" src="${character.image}" alt="Full-body artwork of ${character.name}">`
-      : `<span class="character-art-placeholder">${character.imagePlaceholder}</span>`;
+      : `<span class="character-art-placeholder" aria-hidden="true"></span>`;
     const artworkImage = imageArea.querySelector(".character-full-art");
     artworkImage?.addEventListener("error", () => {
       imageArea.classList.add("character-stage__image--placeholder");
-      imageArea.innerHTML = `<span class="character-art-placeholder">${character.imagePlaceholder}</span>`;
-      imageArea.setAttribute("aria-label", character.imagePlaceholder);
+      imageArea.innerHTML = `<span class="character-art-placeholder" aria-hidden="true"></span>`;
+      imageArea.setAttribute("aria-label", `${character.name} artwork not yet available`);
     });
-    imageArea.setAttribute("aria-label", character.image ? `${character.name} full-body artwork` : character.imagePlaceholder);
+    imageArea.setAttribute("aria-label", character.image ? `${character.name} full-body artwork` : `${character.name} artwork not yet available`);
   }
 
   function renderFacts(character) {

@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex = (index + galleryItems.length) % galleryItems.length;
     const item = galleryItems[currentIndex];
     lightboxCaption.textContent = `${String(currentIndex + 1).padStart(2, "0")} — ${item.title}`;
-    lightboxImage.textContent = item.image ? "" : "INSERT GALLERY IMAGE HERE";
+    lightboxImage.textContent = "";
     lightboxImage.style.backgroundImage = item.image ? `url("${item.image}")` : "";
     lightboxImage.style.backgroundSize = item.image ? "contain" : "";
     lightboxImage.style.backgroundRepeat = item.image ? "no-repeat" : "";
@@ -51,11 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
     button.className = "gallery-item";
     button.setAttribute("aria-label", `Open ${item.title}`);
     const label = document.createElement("span");
-    label.textContent = item.image ? item.title : "INSERT GALLERY IMAGE HERE";
+    label.textContent = item.image ? item.title : "";
     if (item.image) {
       button.style.backgroundImage = `url("${item.image}")`;
-      button.style.backgroundSize = "cover";
+      button.style.backgroundSize = "contain";
       button.style.backgroundPosition = "center";
+      button.style.backgroundRepeat = "no-repeat";
     }
     button.appendChild(label);
     button.addEventListener("click", () => openLightbox(index, button));

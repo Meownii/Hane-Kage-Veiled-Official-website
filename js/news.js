@@ -78,8 +78,8 @@ function createNewsCard(item) {
     image.style.backgroundPosition = "center";
     image.setAttribute("aria-label", `${item.title} news image`);
   } else {
-    image.textContent = "INSERT NEWS IMAGE HERE";
-    image.setAttribute("aria-label", "News image placeholder");
+    image.textContent = "";
+    image.setAttribute("aria-label", "News image not yet available");
   }
 
   article.append(time, copy, image);
@@ -97,8 +97,8 @@ function createEpisodeCard(item) {
   const image = document.createElement("div");
   image.className = "episode-thumb placeholder";
   image.setAttribute("role", "img");
-  image.textContent = "INSERT EPISODE IMAGE HERE";
-  image.setAttribute("aria-label", "Episode image placeholder");
+  image.textContent = "";
+  image.setAttribute("aria-label", `Episode ${item.number} image not yet available`);
   if (item.image) {
     const probe = new Image();
     probe.onload = () => {
