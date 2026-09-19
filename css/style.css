@@ -1545,8 +1545,12 @@ body {
 
 /* HOME ART — large desktop presentation with a soft dark lower fade. */
 @media (min-width: 981px) {
+  .home-page {
+    --home-hero-height: max(100svh, clamp(950px, 74vw, 1180px));
+  }
+
   .home-page .hero {
-    min-height: max(100svh, 820px);
+    min-height: var(--home-hero-height);
   }
 
   .home-page .hero__visual {
@@ -1587,5 +1591,11 @@ body {
     transform: none;
     background: linear-gradient(to bottom, transparent 0%, rgba(7,20,29,.16) 38%, rgba(7,20,29,.88) 100%);
     pointer-events: none;
+  }
+
+  .home-page .site-header--home {
+    height: var(--home-hero-height);
+    min-height: var(--home-hero-height);
+    overflow-y: visible;
   }
 }
