@@ -1546,8 +1546,8 @@ body {
 /* HOME ART — large desktop presentation with a soft dark lower fade. */
 @media (min-width: 981px) {
   .home-page {
-    --home-hero-height: max(100svh, clamp(950px, 74vw, 1180px));
-    --home-side-panel: clamp(350px, 25vw, 420px);
+    --home-hero-height: max(105svh, clamp(1080px, 88vw, 1600px));
+    --home-side-panel: clamp(380px, 26vw, 450px);
   }
 
   .home-page .hero {
@@ -1570,12 +1570,12 @@ body {
     display: block;
     position: absolute;
     z-index: 0;
-    inset: -20px;
+    inset: -34px;
     background:
-      linear-gradient(90deg, rgba(7,20,29,.72), rgba(7,20,29,.18) 28%, rgba(7,20,29,.18) 72%, rgba(7,20,29,.72)),
-      url("../images/home/home-cover.png") center / cover no-repeat;
-    filter: blur(12px) saturate(.72) brightness(.66);
-    transform: scale(1.035);
+      linear-gradient(90deg, rgba(7,20,29,.08), rgba(7,20,29,.02) 58%, rgba(7,20,29,.58)),
+      url("../images/home/home-cover.png") center / 100% 100% no-repeat;
+    filter: blur(20px) saturate(.78) brightness(.7);
+    transform: scale(1.065);
     pointer-events: none;
   }
 
@@ -1597,39 +1597,39 @@ body {
   .home-page .site-header--home {
     height: var(--home-hero-height);
     min-height: var(--home-hero-height);
-    padding: clamp(24rem, 49vh, 28rem) clamp(2.15rem, 3vw, 3.6rem) 1.5rem;
+    padding: clamp(27rem, 52vh, 31rem) clamp(2.25rem, 3.2vw, 3.9rem) 1.5rem;
     overflow-y: visible;
   }
 
   .home-page .hero__copy {
-    top: clamp(1.7rem, 4vh, 3.2rem);
-    padding-inline: clamp(2rem, 3vw, 3.5rem);
+    top: clamp(1.8rem, 4vh, 3.3rem);
+    padding-inline: clamp(2.1rem, 3.2vw, 3.8rem);
   }
 
   .home-page .hero__copy .eyebrow {
     margin-bottom: .45rem;
-    font-size: clamp(.63rem, .62vw, .73rem);
+    font-size: clamp(.67rem, .68vw, .78rem);
   }
 
   .home-page .hero__logo {
-    width: min(250px, 82%);
-    max-height: 235px;
+    width: min(305px, 88%);
+    max-height: 285px;
     margin: -.15rem auto .15rem;
   }
 
   .home-page .hero blockquote {
-    max-width: 330px;
-    margin-bottom: .8rem;
-    font-size: clamp(1.16rem, 1.35vw, 1.42rem);
+    max-width: 360px;
+    margin-bottom: .9rem;
+    font-size: clamp(1.25rem, 1.42vw, 1.55rem);
   }
 
   .home-page .hero .ornament-link {
-    padding: .7rem 1rem;
-    font-size: clamp(.63rem, .62vw, .72rem);
+    padding: .78rem 1.1rem;
+    font-size: clamp(.68rem, .67vw, .78rem);
   }
 
   .home-page .site-header--home .primary-nav a {
-    padding: clamp(.58rem, .72vh, .78rem) .85rem;
-    font-size: clamp(.69rem, .67vw, .78rem);
+    padding: clamp(.7rem, .85vh, .92rem) .95rem;
+    font-size: clamp(.77rem, .74vw, .88rem);
   }
 }
