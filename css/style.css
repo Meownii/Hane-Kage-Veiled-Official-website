@@ -1547,6 +1547,7 @@ body {
 @media (min-width: 981px) {
   .home-page {
     --home-hero-height: max(100svh, clamp(950px, 74vw, 1180px));
+    --home-side-panel: clamp(350px, 25vw, 420px);
   }
 
   .home-page .hero {
@@ -1561,7 +1562,7 @@ body {
   .home-page .hero__keyvisual {
     z-index: 1;
     object-fit: contain;
-    object-position: center;
+    object-position: left center;
   }
 
   .home-page .hero__visual::after {
@@ -1596,6 +1597,39 @@ body {
   .home-page .site-header--home {
     height: var(--home-hero-height);
     min-height: var(--home-hero-height);
+    padding: clamp(24rem, 49vh, 28rem) clamp(2.15rem, 3vw, 3.6rem) 1.5rem;
     overflow-y: visible;
+  }
+
+  .home-page .hero__copy {
+    top: clamp(1.7rem, 4vh, 3.2rem);
+    padding-inline: clamp(2rem, 3vw, 3.5rem);
+  }
+
+  .home-page .hero__copy .eyebrow {
+    margin-bottom: .45rem;
+    font-size: clamp(.63rem, .62vw, .73rem);
+  }
+
+  .home-page .hero__logo {
+    width: min(250px, 82%);
+    max-height: 235px;
+    margin: -.15rem auto .15rem;
+  }
+
+  .home-page .hero blockquote {
+    max-width: 330px;
+    margin-bottom: .8rem;
+    font-size: clamp(1.16rem, 1.35vw, 1.42rem);
+  }
+
+  .home-page .hero .ornament-link {
+    padding: .7rem 1rem;
+    font-size: clamp(.63rem, .62vw, .72rem);
+  }
+
+  .home-page .site-header--home .primary-nav a {
+    padding: clamp(.58rem, .72vh, .78rem) .85rem;
+    font-size: clamp(.69rem, .67vw, .78rem);
   }
 }
