@@ -5,7 +5,8 @@
    its title and numbered filename. Keep only finished/current artwork here.
    ================================================== */
 const galleryItems = [
-  { title: "The Shadow", image: "images/gallery/gallery-01.png" }
+  { title: "The Shadow", image: "images/gallery/gallery-01.png" },
+  { title: "Official Key Visual", image: "images/gallery/gallery-02.jpg" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {

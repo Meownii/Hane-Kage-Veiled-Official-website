@@ -641,3 +641,152 @@
   .hero__visual { bottom: 12.6rem; }
   .hero__logo { width: min(43vw, 162px); max-width: 162px; }
 }
+
+/* ==================================================
+   FINAL MOBILE HOME
+   Keep the complete key visual, but remove the oversized light blocks and
+   keep the identity/navigation compact beneath the artwork.
+   ================================================== */
+@media (max-width: 768px) {
+  .home-page .site-header--home {
+    position: absolute;
+    inset: 0 0 auto;
+    width: 100%;
+    height: 72px;
+    min-height: 72px;
+    padding: .65rem 1rem;
+    color: #d5c9b4;
+    border-bottom: 1px solid rgba(130,31,41,.35);
+    background: linear-gradient(180deg, rgba(4,9,13,.98), rgba(7,20,29,.94));
+  }
+
+  .home-page .site-header--home .header-mark__crest {
+    width: 44px;
+    height: 44px;
+  }
+
+  .home-page .site-header--home .menu-toggle {
+    width: 48px;
+    height: 48px;
+    color: #d5c9b4;
+    background: rgba(7,20,29,.86);
+  }
+
+  .home-page .hero {
+    position: relative;
+    min-height: max(100svh, 850px);
+    padding: 0;
+    overflow: hidden;
+    color: #d5c9b4;
+    background: #07141d;
+  }
+
+  .home-page .hero__visual {
+    position: absolute;
+    inset: 72px 0 225px;
+    width: 100%;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #07141d;
+  }
+
+  .home-page .hero__visual::after { content: none; display: none; }
+
+  .home-page .hero__visual::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    inset: auto 0 0;
+    height: 64px;
+    border: 0;
+    background: linear-gradient(to bottom, transparent, #07141d);
+    pointer-events: none;
+  }
+
+  .home-page .hero__keyvisual {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transform: none;
+  }
+
+  .home-page .hero__copy {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 225px;
+    padding: .55rem 1rem 1rem;
+    color: #d5c9b4;
+    background: #07141d;
+    transform: none;
+    text-align: center;
+  }
+
+  .home-page .hero__copy .eyebrow {
+    margin: 0 0 .2rem;
+    color: #b74b55;
+    font-size: .55rem;
+  }
+
+  .home-page .hero__logo {
+    width: min(43vw, 170px);
+    min-height: 0;
+    max-width: 170px;
+    max-height: 125px;
+    margin: -.25rem auto -.1rem;
+    object-fit: contain;
+    filter: none;
+  }
+
+  .home-page .hero blockquote {
+    max-width: 330px;
+    margin: .2rem auto .45rem;
+    color: #e8e0d0;
+    font-size: clamp(1rem, 4.4vw, 1.18rem);
+    line-height: 1.12;
+  }
+
+  .home-page .hero .ornament-link {
+    width: min(290px, 82vw);
+    margin: 0 auto;
+    padding: .55rem .8rem;
+    color: #e8e0d0;
+    font-size: .62rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page .hero { min-height: max(100svh, 820px); }
+  .home-page .hero__visual { inset: 72px 0 218px; }
+  .home-page .hero__copy { min-height: 218px; }
+  .home-page .hero__logo { width: min(41vw, 158px); max-width: 158px; }
+}
+
+/* Desktop selectors use the same uncropped square portraits as mobile. */
+@media (min-width: 901px) {
+  .character-selector__portrait {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    padding: .45rem;
+  }
+
+  .character-selector__portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+}
