@@ -1542,3 +1542,30 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* HOME ART — large desktop presentation with a soft dark lower fade. */
+@media (min-width: 981px) {
+  .home-page .hero__visual {
+    background: #07141d;
+  }
+
+  .home-page .hero__keyvisual {
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .home-page .hero__visual::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    inset: auto 0 0;
+    width: 100%;
+    height: clamp(110px, 20vh, 220px);
+    border: 0;
+    opacity: 1;
+    transform: none;
+    background: linear-gradient(to bottom, transparent 0%, rgba(7,20,29,.34) 42%, #07141d 100%);
+    pointer-events: none;
+  }
+}
