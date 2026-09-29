@@ -6,7 +6,8 @@
    ================================================== */
 const galleryItems = [
   { title: "The Shadow", image: "images/gallery/gallery-01.png" },
-  { title: "Official Key Visual", image: "images/gallery/gallery-02.jpg" }
+  { title: "Official Key Visual", image: "images/gallery/gallery-02.jpg" },
+  { title: "Hane Kage — Character Sheet", image: "images/gallery/gallery-03.png" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
